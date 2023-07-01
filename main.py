@@ -29,12 +29,12 @@ class Character:
                 f'"{self.SPECIAL_SKILL} {self.SPECIAL_BUFF}".')
 
     def __str__(self) -> str:
-        return f'{self.__class__.__name__} - {self.BRIEF_DESC_CHAR_CLASS}'
+        return f'{self.__class__.__name__} - {self.BRIEF_DESC_CHAR_CLASS}.'
 
 
 class Warrior(Character):
     BRIEF_DESC_CHAR_CLASS = (
-        ' дерзкий воин ближнего боя. Сильный, выносливый и отважный'
+        'дерзкий воин ближнего боя. Сильный, выносливый и отважный'
     )
     RANGE_VALUE_ATTACK = (3, 5)
     RANGE_VALUE_DEFENCE = (5, 10)
@@ -44,7 +44,7 @@ class Warrior(Character):
 
 class Mage(Character):
     BRIEF_DESC_CHAR_CLASS = (
-        ' находчивый воин дальнего боя. Обладает высоким интеллектом'
+        'находчивый воин дальнего боя. Обладает высоким интеллектом'
     )
     RANGE_VALUE_ATTACK = (5, 10)
     RANGE_VALUE_DEFENCE = (-2, 2)
@@ -54,7 +54,7 @@ class Mage(Character):
 
 class Healer(Character):
     BRIEF_DESC_CHAR_CLASS = (
-        ' могущественный заклинатель. Черпает силы из природы, веры и духов'
+        'могущественный заклинатель. Черпает силы из природы, веры и духов'
     )
     RANGE_VALUE_ATTACK = (-3, -1)
     RANGE_VALUE_DEFENCE = (2, 5)
@@ -63,7 +63,7 @@ class Healer(Character):
 
 
 def choice_char_class(char_name: str) -> Character:
-    """Возвращает строку с выбранным классом персонажа."""
+    """Возвращает обект класса Character с именем из аргумента функции."""
     game_classes: dict = {
         'warrior': Warrior,
         'mage': Mage,
@@ -88,7 +88,7 @@ def choice_char_class(char_name: str) -> Character:
 
 def start_training(character: Character) -> str:
     """
-    Принимает на вход имя и класс персонажа.
+    Принимает на вход объект класса Character.
     Возвращает сообщение о результатах цикла тренировки персонажа.
     """
     commands: dict = {
@@ -101,7 +101,7 @@ def start_training(character: Character) -> str:
     print('Введи одну из команд: attack — чтобы атаковать противника, '
           'defense — чтобы блокировать атаку противника или '
           'special — чтобы использовать свою суперсилу.')
-    print('Если не хочешь тенироваться, введи команду skip.')
+    print('Если не хочешь тренироваться, введи команду skip.')
     cmd: str = None
     while cmd != 'skip':
         cmd = input('Введите команду: ')
